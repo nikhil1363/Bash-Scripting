@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Author: Nikhil Pathania
+# Created: 21/07/2021
+# Last Modified: 21/07/2021
+
+# Description
+# Creates a backup in ~/bash folder of all files in the home directory
+
+# Usage
+# backup_script
+
+currentdir=$(pwd)
+
+echo "Hello, ${USER^}"
+echo "I will now back up your home directory, $HOME"
+
+echo "You are running this script from $currentdir"
+echo "Therefore, I will save the backup in $currentdir"
+
+tar -cf $currentdir/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $HOME/* 2>/dev/null
+
+echo "Backup Completed Successfully."
+
+exit 0
+
+
